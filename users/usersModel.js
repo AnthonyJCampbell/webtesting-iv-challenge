@@ -9,3 +9,9 @@ async function insert(user) {
     .select("username", "user_id")
     .where({ user_id });
 }
+
+async function destroy(user_id) {
+  return db("users")
+    .where({ user_id })
+    .del();
+}
